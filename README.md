@@ -1,7 +1,9 @@
 # CMPS 2200  Recitation 01
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):
+**Lucia Filippone 
+**Name (Team Member 2):
+**Sydney Feldman
 
 In this recitation, we will investigate asymptotic complexity. Additionally, we will get familiar with the various technologies we'll use for collaborative coding.
 
@@ -19,7 +21,7 @@ To complete this recitation, follow the instructions in this document. Some of y
 - Make sure the dependencies are installed. Please use 'pip install -r requirements.txt'.
 
 ## Running and testing your code
-- In the command-line window, run `./ipy` to launch an interactive IPython shell. This is an interactive shell to help run and debug your code. Any code you change in `main.py` will be reflected from this shell. So, you can modify a function in `main.py`, then test it here.
+- In the command-line window, run `./ipy` to launch an interactive IPython shell. This is an interactive shells to help run and debug your code. Any code you change in `main.py` will be reflected from this shell. So, you can modify a function in `main.py`, then test it here.
   + If it seems things don't refresh, try running `from main import *`
 - You can exit the IPython prompt by either typing `exit` or pressing `ctrl-d`
 - To run tests, from the command-line shell, you can run
@@ -48,11 +50,14 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`? 
 
-**TODO: your answer goes here**
+**TODO: your answer goes here
+**For linear search, the worst case input value for key would be 
+**the value of the last index, or if it was not in the list at **all. For binary search, the worst case input value of key **would be either the leftmost or rightmost indexes, or if the **value was not present in the list at all.  
 
 - [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
 
 **TODO: your answer goes here**
+**For linear search, the best case input of key would be the **value of the first index. For binary search, the best case **input value of key would be the index of the middle value. 
 
 - [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one of its parameters is another function.
 
