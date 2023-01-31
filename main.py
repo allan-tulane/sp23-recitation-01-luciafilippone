@@ -51,7 +51,7 @@ def test_binary_search():
 
 
 def time_search(search_fn, mylist, key):
-	"""
+  """
 	Return the number of milliseconds to run this
 	search function on this list.
 
@@ -68,35 +68,44 @@ def time_search(search_fn, mylist, key):
 	  the number of milliseconds it takes to run this
 	  search function on this input.
 	"""
+  start_time = time.time()
+  search_fn(mylist, key)
+  end_time = time.time()
+  t = end_time - start_time
+  mill = t * 1000
+  return mill
+  
+  
 	### TODO
 
 	###
 
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
-	"""
-	Compare the running time of linear_search and binary_search
-	for input sizes as given. The key for each search should be
-	-1. The list to search for each size contains the numbers from 0 to n-1,
-	sorted in ascending order. 
 
-	You'll use the time_search function to time each call.
+  results_list = []
+  
+  for i in sizes:
+     mylist = list(range(int(i)))
+     time_linear = time_search(linear_search, mylist, -1)
+     time_binary = time_search(binary_search, mylist, -1)
+     results_list.append(len(mylist))
+     results_list.append(time_linear)
+     results_list.append(time_binary)
 
-	Returns:
-	  A list of tuples of the form
-	  (n, linear_search_time, binary_search_time)
-	  indicating the number of milliseconds it takes
-	  for each method to run on each value of n
-	"""
+  return results_list
 	### TODO
 
 	###
-
 def print_results(results):
 	""" done """
 	print(tabulate.tabulate(results,
 							headers=['n', 'linear', 'binary'],
 							floatfmt=".3f",
 							tablefmt="github"))
+
+
+
+
 
 def test_compare_search():
 	res = compare_search(sizes=[10, 100])
