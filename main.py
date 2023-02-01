@@ -3,7 +3,7 @@ CMPS 2200  Recitation 1
 """
 
 ### the only imports needed are here
-#import tabulate
+import tabulate
 import time
 ###
 
@@ -79,18 +79,33 @@ def time_search(search_fn, mylist, key):
 	### TODO
 
 	###
+"""
+	Compare the running time of linear_search and binary_search
+	for input sizes as given. The key for each search should be
+	-1. The list to search for each size contains the numbers from 0 to n-1,
+	sorted in ascending order. 
 
+	You'll use the time_search function to time each call.
+
+	Returns:
+	  A list of tuples of the form
+	  (n, linear_search_time, binary_search_time)
+	  indicating the number of milliseconds it takes
+	  for each method to run on each value of n
+	"""
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 
+
+  
   results_list = []
   
   for i in sizes:
+    
      mylist = list(range(int(i)))
      time_linear = time_search(linear_search, mylist, -1)
      time_binary = time_search(binary_search, mylist, -1)
-     results_list.append(len(mylist))
-     results_list.append(time_linear)
-     results_list.append(time_binary)
+     curr_tuple = (i, time_linear, time_binary)
+     results_list.append(curr_tuple)
 
   return results_list
 	### TODO
@@ -104,7 +119,7 @@ def print_results(results):
 							tablefmt="github"))
 
 
-
+print_results(compare_search())
 
 
 def test_compare_search():
