@@ -3,7 +3,7 @@ CMPS 2200  Recitation 1
 """
 
 ### the only imports needed are here
-import tabulate
+#import tabulate
 import time
 ###
 
@@ -108,9 +108,10 @@ def print_results(results):
 
 
 def test_compare_search():
-	res = compare_search(sizes=[10, 100])
-	print(res)
-	assert res[0][0] == 10
-	assert res[1][0] == 100
-	assert res[0][1] < 1
-	assert res[1][1] < 1
+  res = []
+  res = compare_search(sizes=[10, 100])
+  print(res)
+  assert res[0][0] == 10
+  assert res[1][0] == 100
+  assert res[0][1] < 1
+  assert res[1][1] < 1
