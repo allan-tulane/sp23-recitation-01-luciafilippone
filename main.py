@@ -107,7 +107,11 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
      curr_tuple = (i, time_linear, time_binary)
      results_list.append(curr_tuple)
 
-  return results_list
+  print(tabulate.tabulate(results_list,
+							headers=['n', 'linear', 'binary'],
+							floatfmt=".3f",
+							tablefmt="github"))
+  #return results_list
 	### TODO
 
 	###
