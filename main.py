@@ -118,10 +118,6 @@ def print_results(results):
 							floatfmt=".3f",
 							tablefmt="github"))
 
-
-print_results(compare_search())
-
-
 def test_compare_search():
   res = []
   res = compare_search(sizes=[10, 100])
