@@ -77,4 +77,4 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
       θ(kn)
   + For binary search? **TODO: your answer goes here**
       θ(klog_2(n))
-  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting?**TODO: your answer goes here** It is more effiecient to first sort and then use binary search when k 
+  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting?**TODO: your answer goes here** It is more effiecient to first sort and then use binary search when k is larger than (n^2)/(n-logn).
