@@ -3,7 +3,7 @@ CMPS 2200  Recitation 1
 """
 
 ### the only imports needed are here
-##import tabulate
+import tabulate
 import time
 ###
 
@@ -104,8 +104,8 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
      mylist = list(range(int(i)))
      time_linear = time_search(linear_search, mylist, -1)
      time_binary = time_search(binary_search, mylist, -1)
-     curr_tuple = (i, time_linear, time_binary)
-     results_list.append(curr_tuple)
+     my_tuple = (i, time_linear, time_binary)
+     results_list.append(my_tuple)
 
   
   return results_list
@@ -114,11 +114,11 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	###
 def print_results(results):
 	""" done """
-	###print(tabulate.tabulate(results,
-							###headers=['n', 'linear', 'binary'],
-							###floatfmt=".3f",
-							##tablefmt="github"))
-  ##print(results)
+	print(tabulate.tabulate(results,
+							headers=['n', 'linear', 'binary'],
+							floatfmt=".3f",
+							tablefmt="github"))
+  
 
 def test_compare_search():
   res = []
@@ -129,3 +129,4 @@ def test_compare_search():
   assert res[0][1] < 1
   assert res[1][1] < 1
   
+print_results(compare_search(sizes=[10, 100, 1000, 10000]))
